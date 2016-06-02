@@ -1,4 +1,4 @@
-package com.example.navagiaginasta.latihansqlite;
+package com.example.ali.latihansqlite;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

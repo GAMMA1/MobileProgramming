@@ -1,8 +1,5 @@
-package com.example.navagiaginasta.latihansqlite;
+package com.example.ali.latihansqlite;
 
-/**
- * Created by Nava Gigs on 5/19/2016.
- */
 public class Mahasiswa {
     private long id;
     private String nama_mahasiswa;

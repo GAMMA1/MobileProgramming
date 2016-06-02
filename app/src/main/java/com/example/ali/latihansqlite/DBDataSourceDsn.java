@@ -1,14 +1,14 @@
-package com.example.navagiaginasta.latihansqlite;
+package com.example.ali.latihansqlite;
 
-/**
- * Created by Nava Gigs on 5/19/2016.
- */
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+
+import com.example.ali.latihansqlite.DBHelperdsn;
+import com.example.ali.latihansqlite.Dosen;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

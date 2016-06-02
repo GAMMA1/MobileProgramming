@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.navagiaginasta.latihansqlite">
+    package="com.example.ali.latihansqlite">
 
     <application
         android:allowBackup="true"
@@ -19,6 +19,9 @@
             android:label="Latihan SQL LITE" />
         <activity
             android:name=".Menu"
+            android:label="Latihan SQL LITE" />
+        <activity
+            android:name=".login"
             android:label="Latihan SQL LITE">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

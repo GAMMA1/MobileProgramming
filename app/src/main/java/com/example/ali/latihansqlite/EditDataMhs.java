@@ -1,8 +1,4 @@
-package com.example.navagiaginasta.latihansqlite;
-
-/**
- * Created by Nava Gigs on 5/19/2016.
- */
+package com.example.ali.latihansqlite;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -16,38 +12,37 @@ import android.widget.TextView;
 
 import java.sql.SQLException;
 
-public class EditData extends Activity implements OnClickListener {
-
-    private DBDataSource dataSource;
+public class EditDataMhs extends Activity implements OnClickListener  {
+    private DBDataSourceMhs dataSource;
 
     private long id;
 
-    private String harga;
-    private String merk;
+    private String kelas;
+    private String npm;
     private String nama;
 
     private EditText edNama;
-    private EditText edHarga;
-    private EditText edMerk;
+    private EditText edKelas;
+    private EditText edNpm;
 
     private TextView txId;
 
     private Button btnSave;
     private Button btnCancel;
 
-    private Barang barang;
+    private Mahasiswa mahasiswa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.edit_data);
+        setContentView(R.layout.edit_datamhs);
 
         edNama = (EditText) findViewById(R.id.editText_nama);
-        edMerk = (EditText) findViewById(R.id.editText_merk);
-        edHarga = (EditText) findViewById(R.id.editText_harga);
-        txId = (TextView) findViewById(R.id.text_id_barang);
+        edNpm = (EditText) findViewById(R.id.editText_npm);
+        edKelas = (EditText) findViewById(R.id.editText_kelas);
+        txId = (TextView) findViewById(R.id.text_id_mahasiswa);
 
-        dataSource = new DBDataSource(this);
+        dataSource = new DBDataSourceMhs(this);
         try {
             dataSource.open();
         } catch (SQLException e) {
@@ -56,15 +51,15 @@ public class EditData extends Activity implements OnClickListener {
 
         Bundle bun = this.getIntent().getExtras();
         id = bun.getLong("id");
-        harga=bun.getString("harga");
-        merk= bun.getString("merk");
+        kelas=bun.getString("kelas");
+        npm= bun.getString("npm");
         nama=bun.getString("nama");
 
         txId.append(String.valueOf(id));
 
         edNama.setText(nama);
-        edHarga.setText(harga);
-        edMerk.setText(merk);
+        edKelas.setText(kelas);
+        edNpm.setText(npm);
 
         btnSave = (Button) findViewById(R.id.button_save_update);
         btnSave.setOnClickListener(this);
@@ -77,16 +72,16 @@ public class EditData extends Activity implements OnClickListener {
         switch (v.getId())
         {
             case R.id.button_save_update:
-                barang = new Barang();
-                barang.setHarga_barang(edHarga.getText().toString());
-                barang.setNama_barang(edNama.getText().toString());
-                barang.setMerk_barang(edMerk.getText().toString());
+                mahasiswa = new Mahasiswa();
+                mahasiswa.setKelas_mahasiswa(edKelas.getText().toString());
+                mahasiswa.setNama_mahasiswa(edNama.getText().toString());
+                mahasiswa.setNpm_mahasiswa(edNpm.getText().toString());
 
-                barang.setId(id);
-                dataSource.updateBarang(barang);
-                Intent i = new Intent(this, ViewData.class);
+                mahasiswa.setId(id);
+                dataSource.updateMahasiswa(mahasiswa);
+                Intent i = new Intent(this, ViewDataMhs.class);
                 startActivity(i);
-                EditData.this.finish();
+                EditDataMhs.this.finish();
                 dataSource.close();
                 break;
 
@@ -96,5 +91,5 @@ public class EditData extends Activity implements OnClickListener {
                 break;
         }
     }
-}
 
+}

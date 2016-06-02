@@ -1,8 +1,6 @@
-package com.example.navagiaginasta.latihansqlite;
+package com.example.ali.latihansqlite;
 
-/**
- * Created by Nava Gigs on 5/19/2016.
- */
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
+
+import com.example.ali.latihansqlite.DBDataSourceDsn;
 
 import java.sql.SQLException;
 

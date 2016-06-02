@@ -1,8 +1,6 @@
-package com.example.navagiaginasta.latihansqlite;
+package com.example.ali.latihansqlite;
 
-/**
- * Created by Nava Gigs on 5/19/2016.
- */
+
 
 import android.app.Activity;
 import android.content.Intent;
